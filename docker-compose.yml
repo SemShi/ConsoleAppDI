@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15.2
+    container_name: bot-postgres
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: tg-bot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_INITDB_ARGS: "--auth=trust --auth-host=trust --auth-local=trust"
+    volumes:
+      - ./d/postgresql/data:/var/lib/postgresql/data
+      - ./d/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ./d/postgresql/pg_hba.conf:/var/lib/postgresql/pg_hba.conf:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
