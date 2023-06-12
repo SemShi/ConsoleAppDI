@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Telegram.Bot.Base.Services;
+using Telegram.Bot.Polling;
 
 
 var builder = new ConfigurationBuilder();
@@ -21,16 +22,18 @@ Log.Logger.Information("Application starting..");
 var host = Host.CreateDefaultBuilder()
     .ConfigureServices((context, services) =>
     {
-        services.AddTransient<IGreetingService, GreetingService>();
+        services.AddSingleton<IBotStart, BotStart>();
+        services.AddScoped<IUpdateHandler, UpdateHandler>();
+        services.AddSingleton<ICommand, Command>();
     })
     .UseSerilog()
     .Build();
 
 // Creating instance of start point a programm
-var app = ActivatorUtilities.CreateInstance<GreetingService>(host.Services);
+var app = ActivatorUtilities.CreateInstance<BotStart>(host.Services);
 
 // Execute start method
-app.Run();
+await app.StartBotAsync();
 
 // Plug appsettings.json in our builder
 static void BuildConfig(IConfigurationBuilder builder)

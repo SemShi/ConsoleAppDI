@@ -8,14 +8,17 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>bin\Debug\Telegram.Bot.Base.xml</DocumentationFile>
+      <DocumentationFile></DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.4.23259.5" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
       <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
       <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
+      <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+      <PackageReference Include="Telegram.Bots.Extensions.Polling" Version="5.9.0" />
     </ItemGroup>
 
     <ItemGroup>
