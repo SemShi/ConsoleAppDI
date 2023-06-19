@@ -10,7 +10,7 @@ public class Initial : Migration
 	{
 		Create.Table("test_table")
 			.WithColumn("id").AsInt32().Identity().PrimaryKey()
-			.WithColumn("article_id").AsGuid().NotNullable().ForeignKey("blog", "id").OnDeleteOrUpdate(Rule.Cascade)
+			.WithColumn("article_id").AsGuid().NotNullable()
 			.WithColumn("file_name").AsString(255);
 	}
 

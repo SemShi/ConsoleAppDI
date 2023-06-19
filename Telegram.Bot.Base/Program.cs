@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Telegram.Bot.Base.Services;
 using Telegram.Bot.Polling;
+using Bit76.Database.Factories;
 
 
 var builder = new ConfigurationBuilder();
@@ -25,6 +26,7 @@ var host = Host.CreateDefaultBuilder()
         services.AddSingleton<IBotStart, BotStart>();
         services.AddScoped<IUpdateHandler, UpdateHandler>();
         services.AddSingleton<ICommand, Command>();
+        services.AddTransient<IDatabaseFactory, PostgresDatabaseFactory>();
     })
     .UseSerilog()
     .Build();
