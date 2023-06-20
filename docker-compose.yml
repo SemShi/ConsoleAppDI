@@ -20,3 +20,12 @@ services:
         limits:
           cpus: "0.5"
           memory: 512M
+          
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    restart: always
+    ports:
+      - '8080:8978'
+    volumes:
+      - ./d/cloudbeaver:/opt/cloudbeaver/workspace

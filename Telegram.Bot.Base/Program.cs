@@ -26,12 +26,12 @@ var host = Host.CreateDefaultBuilder()
         services.AddSingleton<IBotStart, BotStart>();
         services.AddScoped<IUpdateHandler, UpdateHandler>();
         services.AddSingleton<ICommand, Command>();
-        services.AddTransient<IDatabaseFactory, PostgresDatabaseFactory>();
+        services.AddScoped<IDatabaseFactory, PostgresDatabaseFactory>();
     })
     .UseSerilog()
     .Build();
 
-// Creating instance of start point a programm
+// Creating instance of start point a program
 var app = ActivatorUtilities.CreateInstance<BotStart>(host.Services);
 
 // Execute start method

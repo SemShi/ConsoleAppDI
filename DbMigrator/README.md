@@ -15,3 +15,13 @@
 add-migration --help
 update-database --help
 ```
+
+# Подключение к БД через cloudbeaver
+
+- Выполняем ``docker-compose up -d``
+
+- Смотрим информацию об образах ``docker ps``
+
+- Достаем IP базы данных ``docker inspect <id контейнера БД> | grep -i IPAddress``
+
+- В cloudbeaver при подключении вместо ``localhost`` указываем полученный IP. Порт по умолчанию - ``5432``
