@@ -1,85 +1,36 @@
-# Developer
-appsettings.Development.json
-**/wwwroot/client/*
-**/wwwroot/files/*
-**/ic/sprite.svg
-**/d/postgresql/data/
-.obsidian/
-node_modules
-@Scripts
-.env
+ Common IntelliJ Platform excludes
 
-# User files
-*.rsuser
-*.sln.docstates
+# User specific
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/shelf/*
+**/.idea/dictionaries
+**/.idea/httpRequests/
+
+# Sensitive or high-churn files
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.xml
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+
+# Rider
+# Rider auto-generates .iml files, and contentModel.xml
+**/.idea/**/*.iml
+**/.idea/**/contentModel.xml
+**/.idea/**/modules.xml
+
 *.suo
 *.user
-*.userosscache
-*.userprefs
-
-# Build results
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-[Bb]in/
-[Dd]ebug/
-[Dd]ebugPublic/
-[Ll]og/
-[Ll]ogs/
-[Oo]bj/
-[Rr]elease/
-[Rr]eleases/
-[Ww][Ii][Nn]32/
-bld/
-dist/
-mono_crash.*
-x64/
-x86/
-
-# Visual Studio
 .vs/
-Generated\ Files/
-
-# MSTest
-[Bb]uild[Ll]og.*
-[Tt]est[Rr]esult*/
-
-# JetBrains
-.idea_modules/
+[Bb]in/
+[Oo]bj/
+_UpgradeReport_Files/
+[Pp]ackages/
+d/
 .idea/
-*.sln.iml
 
-# Visual Studio Code
-.history
-.ionide
-.vscode/
-*.vsix
-
-# Logs
-logs
-
-# Thash
-._*
-.apdisk
-.AppleDB
-.AppleDesktop
-.AppleDouble
-.com.apple.timemachine.donotpresent
-.DocumentRevisions-V100
-.DS_Store
-.fseventsd
-.LSOverride
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-[Dd]esktop.ini
-*.lnk
-*.stackdump
-$RECYCLE.BIN/
-ehthumbs_vista.db
-ehthumbs.db
-Network Trash Folder
-Temporary Items
 Thumbs.db
-Thumbs.db:encryptable
-*.csv
+Desktop.ini
+.DS_Store
